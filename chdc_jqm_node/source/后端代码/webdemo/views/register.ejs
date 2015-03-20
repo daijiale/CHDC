@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/users/register" method="post">
+    	Username：<input type="text" name="username"/>
+      Password：<input type="password" name="password"/>
+    	<input type="submit" value="提交"/>
+    </form>
+    <a href="/">返回</a>
+  </body>
+</html>

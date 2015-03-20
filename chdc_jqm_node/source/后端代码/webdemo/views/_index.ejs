@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/users/login" method="post">
+    	Username：<input type="text" name="username"/>
+      Password：<input type="password" name="password"/>
+    	<input type="submit" value="登陆"/>
+    </form>
+    <a href="/users/register">没有账号？</a>
+  </body>
+</html>

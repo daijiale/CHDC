@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<title>长虹点餐</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div id="restau" data-role="page" data-add-back-btn="true">
+	
+	<div data-role="header"> 
+		<h1> </h1>
+	</div> 
+	
+	<div data-role="content">
+	<div class="ui-grid-a" id="restau_infos">	
+		<div class="ui-block-a">
+		<h1>肯德基</h1>
+		
+		<p> 餐馆简介： </p>
+			<ul> 
+				<li>肯德基（Kentucky Fried Chicken，肯塔基州炸鸡），简称KFC，是美国跨国连锁餐厅，同时也是世界第二大速食及最大炸鸡连锁企业，由哈兰德·桑德斯上校于1930年在肯塔基州路易斯维尔创建，主要出售炸鸡、汉堡、薯条、蛋挞、汽水等西式快餐食品</li>
+				<li> 肯德基现隶属于百胜餐饮集团，并与百事可乐结成了战略联盟，固定销售百事公司提供的碳酸饮料（但部分国家例外，如韩国、日本就销售可口可乐）。截至2013年底共有约7,000 家门店。</li>
+				
+				<p><a href="http://10.9.38.226:801/menu/getAllData" rel="external" data-role="button" data-icon="grid"> 本店菜单</a></p>
+			</ul>			
+		</div>		
+		<div class="ui-block-b">
+		<p><img src="img/restau01.jpg" alt="jeannette photo"/></p>
+		<p><a href="" rel="external" data-role="button" data-icon="home">本店主页</a></p>
+		</div>
+	</div><!-- /grid-a -->
+	<hr/>
+	
+	<div class="ui-grid-a" id="contact_infos">	
+	
+	</div><!-- /grid-a -->
+	<div id="contact_buttons">	
+		<a href="http://maps.google.fr/maps?q=jeannette+et+les+cycleux&hl=fr&sll=46.75984,1.738281&sspn=10.221882,18.764648&hq=jeannette+et+les+cycleux&t=m&z=13&iwloc=A" data-role="button" data-icon="maps">地理位置</a> 	
+		<a href="tel:0388161072"  data-role="button" data-icon="tel">预定热线</a>
+		<!--
+		http://www.jb51.net/article/40316.htm  参考这个网址的帖子实现本地拨打电话
+		-->	
+	</div>	
+	<hr/>
+	
+	<div id="notation">	
+	<form>
+	<label for="select-choice-0" class="select"><h2>用户评价</h2></label>
+		<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+		   <option value="one" class="one">不好</option>
+		   <option value="two" class="two">一般</option>
+		   <option value="three" class="three">不错</option>
+		   <option value="four" class="four">很棒</option>
+		</select>	
+	</form>
+	</div>
+
+
+	<script type="text/javascript">
+
+	$( '#restau' ).live( 'pageinit',function(event){
+		var SelectedOptionClass = $('option:selected').attr('class');
+		$('div.ui-select').addClass(SelectedOptionClass);
+		
+		$('#note_utilisateur').live('change', function(){	 
+			$('div.ui-select').removeClass(SelectedOptionClass);
+			
+			SelectedOptionClass = $('option:selected').attr('class');
+			$('div.ui-select').addClass(SelectedOptionClass);		
+			
+		 });
+		
+	  
+	});
+
+	</script>
+	
+
+	</div>
+
+
+</div><!-- /page -->
+</body>
+</html>
